@@ -8,7 +8,7 @@ public class ParkingService extends ParkingLotConfig {
     // this class is to mark slots as parked.
     @Override
     public void process(String[] instructionArray) throws Exception {
-        if (parking_lot != null && !parking_lot.isEmpty()) { // check if parking slot exists and is not empty
+        if (!parking_lot.isEmpty() || parking_lot != null) { // check if parking slot exists and is not empty
             Car car = new Car(instructionArray[1], instructionArray[3]); // create a new car object on basis of registration number and age of driver/user
             List<Integer> totalSlotsLeft = slots_available;
 
@@ -24,7 +24,7 @@ public class ParkingService extends ParkingLotConfig {
             }
         } else {
 //            throw exception if there no parking lot to be found.
-            throw new Exception("Not Parking lot found.");
+            throw new Exception("No Parking lot found.");
         }
     }
 }
