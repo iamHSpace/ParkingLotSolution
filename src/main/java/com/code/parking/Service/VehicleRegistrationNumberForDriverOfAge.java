@@ -10,7 +10,7 @@ import java.util.Map;
 public class VehicleRegistrationNumberForDriverOfAge extends ParkingLotConfig{
     @Override
     public void process(String[] instructionArray) throws Exception {
-        if(!parking_lot.isEmpty() && parking_lot != null){
+        if(parking_lot != null && !parking_lot.isEmpty() ){ // check if parking lot exists and is not empty
             String userAge = instructionArray[1];  //desrired user age
 
             boolean carFound = false;
@@ -24,9 +24,9 @@ public class VehicleRegistrationNumberForDriverOfAge extends ParkingLotConfig{
                 }
             }
 
-            if (carFound == false) {
+            if (carFound == false) {  // if no car found
                 System.out.println("No cars found.");
-            } else {
+            } else { // if car/cars found
                 System.out.println(String.join(",", vehRegNumbers ));
             }
         }else {
