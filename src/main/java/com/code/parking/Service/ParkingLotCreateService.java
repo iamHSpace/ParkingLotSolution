@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ParkingLotCreateService extends ParkingLotConfig{
 
+    //this class creates a new Parking slot.
 
     @Override
     public void process(String[] instructionArray) {
