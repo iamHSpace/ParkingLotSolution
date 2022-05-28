@@ -12,14 +12,14 @@ public class FileParser {
 
     private BufferedReader bufferedReader;
 
-    public FileParser(String string) throws Exception {
+    public FileParser(String string) throws Exception {  // this class reads from input.txt file and converts all instructions in list of instructions.
         try {
-            bufferedReader = new BufferedReader(new FileReader(string));
+            bufferedReader = new BufferedReader(new FileReader(string)); // read file from location.
             String instruction;
             while ((instruction = bufferedReader.readLine()) != null) {
-                ParkingLotConfig parkingLotConfig = ParkingLotConfigImpl.getParkingLotConfig(instruction);
+                ParkingLotConfig parkingLotConfig = ParkingLotConfigImpl.getParkingLotConfig(instruction); // get ParkingLotConfig on basis of query
                 String[] instructionArray = instruction.split(" ");
-                parkingLotConfig.process(instructionArray);
+                parkingLotConfig.process(instructionArray); // process list of instructions.
             }
         }catch (Exception e){
             throw  new Exception(e.getMessage());

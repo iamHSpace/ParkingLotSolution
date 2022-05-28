@@ -12,7 +12,7 @@ public class InputParser {
         Scanner scanner = new Scanner(System.in);
 
         while (true){
-            System.out.println("Enter Input : ");
+            System.out.println("Enter Input : ");   // as user for input instructions.
             String instruction = scanner.nextLine();
 
             String[] instructionArray = instruction.split(" ");
