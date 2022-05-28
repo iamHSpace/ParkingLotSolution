@@ -1,16 +1,13 @@
 package com.code.parking;
 
-import com.code.parking.Input.FileParser;
-import com.code.parking.Input.InputParser;
+import com.code.parking.Input.InputArgsParser;
 
 public class Launcher {
     public static void main( String[] args ) throws Exception {
-
-        if(args[0].isEmpty()) {
-            InputParser inputParser = new InputParser();
-        }
-        else{
-            FileParser fileParser = new FileParser(args[0]);
-        }
+        if(args.length != 0 ) {
+            InputArgsParser.getInputParserConfig(args[0]);
+    } else {
+            InputArgsParser.getInputParserConfig("");
+    }
     }
 }

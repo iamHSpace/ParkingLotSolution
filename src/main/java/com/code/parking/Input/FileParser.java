@@ -13,12 +13,16 @@ public class FileParser {
     private BufferedReader bufferedReader;
 
     public FileParser(String string) throws Exception {
-        bufferedReader = new BufferedReader(new FileReader(string));
-        String instruction;
-        while ((instruction = bufferedReader.readLine()) != null) {
-            ParkingLotConfig parkingLotConfig = ParkingLotConfigImpl.getParkingLotConfig(instruction);
-            String[] instructionArray = instruction.split(" ");
-            parkingLotConfig.process(instructionArray);
+        try {
+            bufferedReader = new BufferedReader(new FileReader(string));
+            String instruction;
+            while ((instruction = bufferedReader.readLine()) != null) {
+                ParkingLotConfig parkingLotConfig = ParkingLotConfigImpl.getParkingLotConfig(instruction);
+                String[] instructionArray = instruction.split(" ");
+                parkingLotConfig.process(instructionArray);
+            }
+        }catch (Exception e){
+            throw  new Exception(e.getMessage());
         }
     }
 }
