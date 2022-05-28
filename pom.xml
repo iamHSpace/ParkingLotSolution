@@ -6,7 +6,7 @@
 
     <groupId>org.code</groupId>
     <artifactId>Parking</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

@@ -1,5 +1,6 @@
 package com.code.parking;
 
+import com.code.parking.Input.FileParser;
 import com.code.parking.Input.InputParser;
 
 public class Launcher {
@@ -9,7 +10,7 @@ public class Launcher {
             InputParser inputParser = new InputParser();
         }
         else{
-            FileParser
+            FileParser fileParser = new FileParser(args[0]);
         }
     }
 }
