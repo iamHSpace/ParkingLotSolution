@@ -11,11 +11,11 @@ public class VehicleRegistrationNumberForDriverOfAge extends ParkingLotConfig{
     @Override
     public void process(String[] instructionArray) throws Exception {
         if(!parking_lot.isEmpty() && parking_lot != null){
-            String userAge = instructionArray[1];
+            String userAge = instructionArray[1];  //desrired user age
 
             boolean carFound = false;
-            Collection<Car> cars = parking_lot.values();
-            List<String> vehRegNumbers = new ArrayList<>();
+            Collection<Car> cars = parking_lot.values();    // all cars in our parking lot.
+            List<String> vehRegNumbers = new ArrayList<>();  // store desired registration numbers in this list
 
             for (Car car : cars) {
                 if (car.getUserAge().equalsIgnoreCase(userAge)) {

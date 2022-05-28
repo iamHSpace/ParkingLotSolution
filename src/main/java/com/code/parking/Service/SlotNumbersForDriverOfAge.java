@@ -11,11 +11,11 @@ public class SlotNumbersForDriverOfAge extends ParkingLotConfig{
     @Override
     public void process(String[] instructionArray) throws Exception {
         if(!parking_lot.isEmpty() && parking_lot != null){
-            String userAge = instructionArray[1];
+            String userAge = instructionArray[1]; // desired user age
 
             boolean carFound = false;
-            Collection<Car> cars = parking_lot.values();
-            List<String> slotNumbers = new ArrayList<>();
+            Collection<Car> cars = parking_lot.values();  // get all cars in parking lot
+            List<String> slotNumbers = new ArrayList<>(); //store all desired slotnumbers in this list
 
             for (Car car : cars) {
                 if (car.getUserAge().equalsIgnoreCase(userAge)) {
@@ -28,9 +28,9 @@ public class SlotNumbersForDriverOfAge extends ParkingLotConfig{
                 }
             }
 
-            if (carFound == false) {
+            if (carFound == false) { // if no desired car is found
                 System.out.println("No cars found.");
-            } else {
+            } else {  // if car/cars found
                 System.out.println(String.join(",", slotNumbers ));
             }
         }else {
